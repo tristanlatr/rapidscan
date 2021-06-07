@@ -1,7 +1,7 @@
 FROM kalilinux/kali-rolling
 RUN echo "deb http://old.kali.org/kali sana main non-free contrib" >> ./etc/apt/sources.list
 RUN apt-get update && apt-get -yu dist-upgrade -y
-RUN apt-get install -y python2.7 python3.9 python-pip
+RUN apt-get install -y python2.7 python3.9 python-pip git
 # This currently fails, so we install golismero with pip from my fork that configures setuptools.
 # RUN apt-get install -y golismero
 RUN python -m pip install git+https://github.com/tristanlatr/golismero.git
