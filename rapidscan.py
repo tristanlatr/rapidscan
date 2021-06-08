@@ -172,12 +172,13 @@ class Spinner:
     def spinner_task(self):
         try:
             while self.busy:
-                #sys.stdout.write(next(self.spinner_generator))
-                print bcolors.BG_ERR_TXT+next(self.spinner_generator)+bcolors.ENDC,
-                sys.stdout.flush()
+                # I've disabled the spinner class because it's generating some extraordinary amount of noise in the ansi output.
+                # sys.stdout.write(next(self.spinner_generator))
+                # print bcolors.BG_ERR_TXT+next(self.spinner_generator)+bcolors.ENDC,
+                # sys.stdout.flush()
                 time.sleep(self.delay)
-                sys.stdout.write('\b')
-                sys.stdout.flush()
+                # sys.stdout.write('\b')
+                # sys.stdout.flush()
         except (KeyboardInterrupt, SystemExit):
             #clear()
             print "\n\t"+ bcolors.BG_ERR_TXT+"RapidScan received a series of Ctrl+C hits. Quitting..." +bcolors.ENDC
