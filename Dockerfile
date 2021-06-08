@@ -1,5 +1,5 @@
 FROM kalilinux/kali-rolling
-RUN echo "deb https://http.kali.org/kali kali-rolling main contrib non-free" > ./etc/apt/sources.list
+RUN echo "deb [trusted=yes] https://http.kali.org/kali kali-rolling main contrib non-free" > ./etc/apt/sources.list
 RUN echo "deb http://old.kali.org/kali sana main non-free contrib" >> ./etc/apt/sources.list
 RUN apt-get update && apt-get -yu dist-upgrade -y
 RUN apt-get install -y python2.7 python2.7-dev python-pip git perl nmap sslscan
