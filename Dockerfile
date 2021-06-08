@@ -3,9 +3,10 @@ RUN echo "deb http://old.kali.org/kali sana main non-free contrib" >> ./etc/apt/
 RUN apt-get update && apt-get -yu dist-upgrade -y
 RUN apt-get install -y python2.7 python2.7-dev python-pip git perl nmap sslscan
 
-# This currently fails, so we install golismero manually.
+# This currently fails, so we install golismero manually. See issue https://github.com/golismero/golismero/issues/59
 # RUN apt-get install -y golismero
-RUN cd /opt && git clone https://github.com/golismero/golismero.git && cd golismero && pip install -r requirements.txt && ln -s /opt./golismero/golismero.py /usr/bin/golismero
+# This also fails, so we skip completely for now. See issue https://github.com/kislyuk/argcomplete/issues/348
+# RUN cd /opt && git clone https://github.com/golismero/golismero.git && cd golismero && pip install -r requirements.txt && ln -s /opt./golismero/golismero.py /usr/bin/golismero
 
 RUN apt-get install -y wget
 RUN apt-get install -y dmitry
