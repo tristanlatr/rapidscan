@@ -1,4 +1,5 @@
 FROM kalilinux/kali-rolling
+RUN echo "deb https://http.kali.org/kali kali-rolling main contrib non-free" > ./etc/apt/sources.list
 RUN echo "deb http://old.kali.org/kali sana main non-free contrib" >> ./etc/apt/sources.list
 RUN apt-get update && apt-get -yu dist-upgrade -y
 RUN apt-get install -y python2.7 python2.7-dev python-pip git perl nmap sslscan
@@ -23,7 +24,7 @@ RUN apt-get install -y xsser
 RUN apt-get install -y dnsmap
 RUN apt-get install -y dnswalk
 RUN apt-get install -y fierce
-RUN apt-get install -y davtest --fix-missing
+RUN apt-get install -y davtest
 RUN apt-get install -y whatweb
 RUN apt-get install -y nikto
 RUN apt-get install -y uniscan
