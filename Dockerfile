@@ -5,7 +5,7 @@ RUN apt-get install -y python2.7 python2.7-dev python-pip git perl nmap sslscan
 
 # This currently fails, so we install golismero manually.
 # RUN apt-get install -y golismero
-RUN cd /opt && git clone https://github.com/golismero/golismero.git && cd golismero && pip install -r requirements.txt && pip install -r requirements_unix.txt && ln -s /opt./golismero/golismero.py /usr/bin/golismero
+RUN cd /opt && git clone https://github.com/golismero/golismero.git && cd golismero && pip install -r requirements.txt && ln -s /opt./golismero/golismero.py /usr/bin/golismero
 
 RUN apt-get install -y wget
 RUN apt-get install -y dmitry
