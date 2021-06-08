@@ -33,7 +33,6 @@ RUN apt-get install -y whois
 RUN apt-get install -y theharvester
 
 WORKDIR /rapidscan
-RUN wget -O rapidscan.py https://raw.githubusercontent.com/skavngr/rapidscan/master/rapidscan.py && chmod +x rapidscan.py
-RUN ln -s /rapidscan/rapidscan.py /usr/local/bin/rapidscan
+RUN wget -O rapidscan.py https://raw.githubusercontent.com/tristanlatr/rapidscan/master/rapidscan.py && chmod +x rapidscan.py
 WORKDIR /reports
-ENTRYPOINT ["rapidscan"]
+ENTRYPOINT ["python", "/rapidscan/rapidscan.py"]
