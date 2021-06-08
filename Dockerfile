@@ -23,7 +23,7 @@ RUN apt-get install -y xsser
 RUN apt-get install -y dnsmap
 RUN apt-get install -y dnswalk
 RUN apt-get install -y fierce
-RUN apt-get install -y davtest
+RUN apt-get install -y davtest --fix-missing
 RUN apt-get install -y whatweb
 RUN apt-get install -y nikto
 RUN apt-get install -y uniscan
