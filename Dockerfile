@@ -1,7 +1,7 @@
 FROM kalilinux/kali-rolling
-
+RUN echo "deb http://old.kali.org/kali sana main non-free contrib" >> ./etc/apt/sources.list
 RUN apt-get update && apt-get -yu dist-upgrade -y
-RUN apt-get install -y python2.7 python2.7-dev python-pip python-docutils git perl nmap sslscan
+RUN apt-get install -y python2.7 python2.7-dev python-pip git perl nmap sslscan
 
 # This currently fails, so we install golismero manually.
 # RUN apt-get install -y golismero
