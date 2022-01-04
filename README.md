@@ -51,6 +51,16 @@
 **Download the script, allow executable permissions & start the scan immediately**
 - `wget -O rapidscan.py https://raw.githubusercontent.com/skavngr/rapidscan/master/rapidscan.py && chmod +x rapidscan.py && ./rapidscan.py example.com`
 
+## Installation
+
+Alternatively, your can install the `rapidscan` python module with `pip`. This will create a link for `rapidscan` in your PATH. 
+
+```
+git clone https://github.com/skavngr/rapidscan.git /opt/
+cd /opt/rapidscan
+python3 -m pip install .
+```
+
 ### With Docker
 To run a scan for `example.com` the command below has to be run. After completion reports can be found in the current path under `reports`.
 ```
